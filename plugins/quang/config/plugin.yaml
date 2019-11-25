@@ -1,0 +1,11 @@
+plugin:
+    name: 'quang.config::lang.plugin.name'
+    description: 'quang.config::lang.plugin.description'
+    author: Quang
+    icon: oc-icon-flask
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Config
+        url: quang/config/config
+        icon: icon-flask

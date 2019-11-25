@@ -1,0 +1,7 @@
+columns:
+    config_name_company:
+        label: 'Tên Công Ty'
+        type: text
+    config_descrtiption_company:
+        label: 'Mô Tả Công Ty'
+        type: text

@@ -1,0 +1,10 @@
+name: Config
+form: $/quang/config/models/config/fields.yaml
+modelClass: Quang\Config\Models\Config
+defaultRedirect: quang/config/config
+create:
+    redirect: 'quang/config/config/update/:id'
+    redirectClose: quang/config/config
+update:
+    redirect: quang/config/config
+    redirectClose: quang/config/config

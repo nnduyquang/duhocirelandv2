@@ -1,0 +1,128 @@
+tabs:
+    fields:
+        config_name_company:
+            label: 'Tên Công Ty'
+            span: full
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_address_company:
+            label: 'Địa Chỉ Công Ty'
+            span: full
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_description_company:
+            label: 'Mô Tả Công Ty'
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'Thông Tin Công Ty'
+        config_phone:
+            label: 'Điện thoại liên hệ'
+            span: full
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_hotline:
+            label: 'Cấu hình hotline'
+            prompt: 'Add new item'
+            maxItems: '1'
+            span: full
+            type: repeater
+            tab: 'Thông Tin Công Ty'
+            form:
+                fields:
+                    config_hotline_show:
+                        label: 'Số hotline hiển thị'
+                        span: left
+                        type: text
+                    config_hotline_call:
+                        label: 'Số hotline khi click nút gọi'
+                        span: right
+                        type: text
+        config_email_company:
+            label: Email
+            span: full
+            type: text
+            tab: 'Thông Tin Công Ty'
+        config_logo:
+            label: 'Chọn Logo'
+            prompt: 'Add new item'
+            maxItems: '1'
+            span: left
+            disabled: 0
+            type: repeater
+            tab: 'Thông Tin Công Ty'
+            form:
+                fields:
+                    config_logo_desktop:
+                        label: 'Chọn logo desktop'
+                        mode: image
+                        span: full
+                        type: mediafinder
+                    config_logo_mobile:
+                        label: 'Chọn logo mobile'
+                        mode: image
+                        span: full
+                        type: mediafinder
+        config_favicon:
+            label: 'Chọn Favicon (16x16 px)'
+            mode: image
+            span: right
+            type: mediafinder
+            tab: 'Thông Tin Công Ty'
+        config_slider:
+            label: Slider
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            tab: Slider
+            form:
+                fields:
+                    slider_path:
+                        label: Slider
+                        mode: image
+                        prompt: 'Add new item'
+                        span: auto
+                        type: mediafinder
+        config_script_header:
+            label: 'Script Header'
+            size: large
+            language: php
+            span: full
+            type: codeeditor
+            tab: Script
+        config_script_body:
+            label: 'Code cài trước thẻ </body>'
+            size: large
+            language: php
+            span: full
+            type: codeeditor
+            tab: Script
+        config_script_fanpage:
+            label: 'Script Fanpage'
+            size: large
+            language: php
+            span: full
+            type: codeeditor
+            tab: Script
+        config_seo:
+            label: 'Cấu Hình SEO'
+            prompt: 'Add new item'
+            span: full
+            maxItems: '1'
+            type: repeater
+            tab: SEO
+            form:
+                fields:
+                    seo_title:
+                        label: 'Tiêu Đề'
+                        span: full
+                        type: text
+                    seo_description:
+                        label: 'Mô Tả'
+                        span: full
+                        type: text
+                    seo_image:
+                        label: 'Hình Ảnh'
+                        mode: image
+                        span: full
+                        type: mediafinder

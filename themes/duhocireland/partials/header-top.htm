@@ -1,0 +1,67 @@
+[config_hotline config_hotline_show]
+hotlineType = 0
+
+[config_hotline config_hotline_call]
+hotlineType = 1
+
+[config_email_company]
+
+[config_logo config_logo_desktop]
+logoType = 0
+
+[menu]
+menu_id = 1
+==
+{% set config_hotline_show=config_hotline_show.configHotline %}
+{% set config_hotline_call=config_hotline_call.configHotline %}
+{% set config_email_company=config_email_company.configEmailCompany %}
+{% set config_logo_desktop=config_logo_desktop.configLogo %}
+
+
+
+
+<div id="menu_desktop" class="container-fluid p-0">
+
+    <div class="top-info">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex">
+                <div class="d-flex align-items-center mr-3">
+                    <i class="fas fa-phone-square"></i>
+                    <p><a href="tel:{{ config_hotline_call }}">{{ config_hotline_show }}</a></p>
+                </div>
+                <div class="d-lg-flex d-sm-none d-none align-items-center">
+                    <i class="fas fa-globe-americas"></i>
+                    <p><a href="mailto:{{ config_email_company }}"> {{ config_email_company }}</a></p>
+                </div>
+            </div>
+            <div class="sc-nw">
+                <a target="_blank" href="http://www.facebook.com/irelandos"><i class="fab fa-facebook-f"></i></a>
+ 
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center pt-3 pb-3">
+
+        <div class="mr-3 text-right">
+            <h4>IRELANDOS</h4>
+            <h6>THE BEST COLLEGES</h6>
+        </div>
+        <a href="{{url('/')}}"><img src="{{config_logo_desktop|media}}" alt="" style="width: 68px;height: auto"></a>
+        <div class="ml-3 text-left">
+            <h4>STUDY</h4>
+            <h6>IN IRELAND</h6>
+        </div>
+
+    </div>
+    <div class="main-menu">
+        <div class="container text-center d-lg-block d-md-block d-none">
+{% component 'menu' %}
+
+        </div>
+        <div class="container mobile-menu d-lg-none d-md-none d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center" id="m-menu">
+            <i class="fas fa-bars pt-2 pb-2 pr-2"></i> <span>MENU</span>
+            </div>
+        </div>
+    </div>
+</div>

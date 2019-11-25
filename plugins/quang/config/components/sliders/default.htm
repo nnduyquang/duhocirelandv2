@@ -1,0 +1,10 @@
+{% set sliders=__SELF__.sliders %}
+<div class="slider">
+    <div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+            {% for slider in sliders %}
+            <img class="slideshow" src="{{slider.slider_path|media}}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+</div>
