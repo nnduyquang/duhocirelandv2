@@ -1,0 +1,31 @@
+fields:
+    title:
+        label: 'Tiêu đề'
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: left
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: 'Mô tả'
+        size: ''
+        span: full
+        type: textarea
+    content:
+        label: 'Nội dung'
+        size: ''
+        span: full
+        type: richeditor
+    img_primary:
+        label: 'Hình đại diện (nếu cần thiết)'
+        mode: file
+        span: auto
+        type: mediafinder
+    is_active:
+        label: 'Đăng?'
+        span: auto
+        type: switch

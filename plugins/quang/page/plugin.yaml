@@ -1,0 +1,11 @@
+plugin:
+    name: 'quang.page::lang.plugin.name'
+    description: 'quang.page::lang.plugin.description'
+    author: Quang
+    icon: oc-icon-clipboard
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Page
+        url: quang/page/page
+        icon: icon-paste

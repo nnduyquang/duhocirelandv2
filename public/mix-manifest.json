@@ -1,5 +1,7 @@
 {
     "/../themes/duhocireland/assets/css/common.css": "/../themes/duhocireland/assets/css/common.css",
     "/../themes/duhocireland/assets/css/frontend.css": "/../themes/duhocireland/assets/css/frontend.css",
-    "/../themes/duhocireland/assets/css/reset.css": "/../themes/duhocireland/assets/css/reset.css"
+    "/../themes/duhocireland/assets/css/reset.css": "/../themes/duhocireland/assets/css/reset.css",
+    "/themes/duhocireland/assets/js/core.common.js": "/themes/duhocireland/assets/js/core.common.js",
+    "/themes/duhocireland/assets/css/core.common.css": "/themes/duhocireland/assets/css/core.common.css"
 }

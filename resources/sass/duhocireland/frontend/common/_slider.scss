@@ -1,0 +1,133 @@
+#slider {
+  position: relative;
+  .blink_text{
+    position: absolute;
+    z-index: 100;
+    top:20%;
+    //transform: rotate(-30deg);
+    //color: $main-color;
+    //text-transform: uppercase;
+    //font-weight: bolder;
+    //font-size: 18px;
+    //animation: blinker 2.5s linear infinite;
+    padding: .5em 2em;
+    font-size: 30px;
+    border-radius: 1em;
+    border: 0px;
+    color: whitesmoke;
+    background: #D31027;
+    background: -webkit-linear-gradient(to right, $main-color,$main-color-sub);
+    background: linear-gradient(to right,$main-color,$main-color-sub);
+    animation: shake 1s ease-in infinite;
+  }
+  @keyframes shake {
+    0%{
+      transform: translate(0);
+    }
+    20%,40%,60%,80%{
+      transform: translate(.8em);
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.5);
+    }
+    10%,30%,50%{
+      transform: translate(-.2em);
+    }
+    70%, 100%{
+      transform: translate(0);
+    }
+  }
+  @keyframes blinker {
+    //50% {
+    //  opacity: 0;
+    //}
+    from{
+      color: $main-color;
+      transform: scale(0.5) rotate(-30deg);
+      opacity: 0;
+    }
+    to{
+      color: $sub-color-2;
+      transform: scale(1) rotate(-30deg);
+      opacity: 1;
+    }
+  }
+  .img-content {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding-top: 38px;
+    overflow: hidden;
+    .test-slide {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      h5 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #007bff;
+      }
+      h4 {
+
+        width: fit-content;
+        margin: 25px auto 20px auto;
+        font-size: 50px;
+        font-weight: bold;
+      }
+      h6 {
+        width: 60%;
+        font-size: 17px;
+        margin: auto;
+        color: #6b6a6a;
+      }
+    }
+    .test-title{
+      position: absolute;
+      text-align: left;
+      width: 50%;
+      background-color: rgba(255,255,255,0.66);
+      right: 0;
+      padding: 20px 20px;
+      h4{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 575.98px){
+  #slider {
+    .blink_text {
+      padding: .3em .7em;
+      font-size: 20px;
+      bottom: 20%;
+      top: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #slider {
+    .img-content {
+      .test-slide {
+        h5 {
+          font-size: 22px;
+        }
+        h4 {
+          font-size: 26px;
+        }
+        h6 {
+          width: 90%;
+        }
+      }
+      .test-title{
+        width: 80%;
+        h4{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

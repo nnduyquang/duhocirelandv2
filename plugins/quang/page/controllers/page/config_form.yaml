@@ -1,0 +1,11 @@
+name: Page
+modelClass: Quang\Page\Models\Page
+form: $/quang/page/models/page/fields.yaml
+defaultRedirect: quang/page/page
+create:
+    redirect: 'quang/page/page/update/:id'
+    redirectClose: quang/page/page
+update:
+    redirect: quang/page/page
+    redirectClose: quang/page/page
+preview: {  }

@@ -1,0 +1,19 @@
+{% set posts_other=__SELF__.others %}
+<div class="sidebar-sea" id="sidebar_news">
+    <h3>Có thể bạn quan tâm</h3>
+    <ul>
+        {% for post_other in posts_other %}
+        <li>
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <a href="{{post_other.url}}">
+
+                        <img src="{{post_other.img_primary|media}}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-8"><a href="{{post_other.url}}">{{post_other.title}}</a></div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

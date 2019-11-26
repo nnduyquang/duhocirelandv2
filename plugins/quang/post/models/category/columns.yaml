@@ -1,0 +1,4 @@
+columns:
+    title:
+        label: 'Loại Bài Viết'
+        type: text

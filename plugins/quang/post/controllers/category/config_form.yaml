@@ -1,0 +1,10 @@
+name: Category
+form: $/quang/post/models/category/fields.yaml
+modelClass: Quang\Post\Models\Category
+defaultRedirect: quang/post/category
+create:
+    redirect: 'quang/post/category/update/:id'
+    redirectClose: quang/post/category
+update:
+    redirect: quang/post/category
+    redirectClose: quang/post/category

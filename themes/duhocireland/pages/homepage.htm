@@ -4,5 +4,236 @@ layout = "default"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
+
+[post_all post_all_h1]
+results = 0
+categories = "home_h1"
+categoryPage = "dich-vu"
+postPage = "dich-vu"
+
+[page_detail]
+pages = "welcome-irelandos"
+
+[post_all post_all_information]
+results = 0
+categories = "information"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+
+[post_all post_all_whychooseus]
+results = 0
+categories = "home_h2"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+
+[post_all post_all_service]
+results = 0
+categories = "service"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+
+[category_detail_title]
+categories = "our-student"
 ==
-<h1>This is home page</h1>
+{% partial "slider" %}
+{% set post_all_h1=post_all_h1.posts %}
+{% set page_detail=page_detail.pageDetail %}
+{% set post_all_information=post_all_information.posts %}
+{% set post_all_whychooseus=post_all_whychooseus.posts %}
+{% set post_all_service=post_all_service.posts %}
+{% set category_detail_title=category_detail_title.category_detail_title %}
+
+<div class="container-fluid" id="h_1">
+    <div class="container" id="top">
+        <div class="row">
+            {%for post in post_all_h1%}
+            <div class="col-md-4 p-0">
+                <a target="_blank" href="{{html_strip(post.content)}}">
+                    <div class="box {% if loop.index0==0 %}left {%elseif loop.index0==1%} middle {%else%} right {%endif%}">
+                        <img src="{{post.img_primary|media}}" alt="">
+                        <h5>{{post.title}}</h5>
+                        <p>{{post.description}}</p>
+                    </div>
+                </a>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container" id="welcome">
+        <div class="row">
+            <div class="col-md-8 wow fadeInLeft">
+                <h5>{{page_detail.title}}</h5>
+                <p>{{page_detail.description}}
+                </p>
+                <div class="row mt-3">
+                    {%for post in post_all_information%}
+                    <div class="col-md-6">
+                        <img src="{{post.img_primary|media}}" alt="">
+                        <h6>{{post.title}}</h6>
+                        <p>{{post.description}}</p>
+                        <button class="read-more"><a href="{{post.url}}">Read more</a>
+                        </button>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+            <div class="col-md-4  wow fadeInRight">
+                <div class="register">
+                    <div class="bg-img"
+                         style="background-image:url({{'design/home/du-hoc-ireland-co-hoi-hoc-bong-hap-dan-danh-rieng-cho-sinh-vien-viet-nam.jpg'|media}});"></div>
+                    <div class="content">
+                        <h4>Get A Free Registration</h4>
+                        <div class="ip-name input-group" style="display: block">
+                            <input name="name" type="text" placeholder="Your name"
+                                   class="form-control input-text" style="display: inline-block;border-radius: unset">
+                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <div class="ip-phone input-group" style="display: block">
+                            <input name="phone" type="text" placeholder="Your phone"
+                                   class="form-control input-text" style="display: inline-block;border-radius: unset">
+                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <div class="ip-email input-group" style="display: block">
+                            <input name="email" type="text" placeholder="Your email"
+                                   class="form-control input-text" style="display: inline-block;border-radius: unset">
+                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
+                                Please choose a username.
+                            </div>
+                        </div>
+                        <textarea name="description" rows="4" cols="50"
+                                  placeholder="Message"></textarea>
+                        <div class="btn-submit">
+                            <div class="button-group">
+                                <button type="button"
+                                        class="btn btn-contact submit-re">Send<i
+                                        class="fa fa-spinner fa-spin fa-3x fa-fw loadingSending" style="
+    font-size: 15px;display: none"></i><i
+                                        class="fa fa-check-circle successSending" aria-hidden="true"
+                                        style="display: none"></i></button>
+                                <span style="display: none;color:  green;font-weight:  bold;margin-top:  5px;">Chúng tôi đã nhận được mail và sẽ phản hồi quý khách trong 24h. Xin cảm ơn.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid" id="h_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h5>Why Choose Us</h5>
+                <p class="info">Here are the reasons why your students should choose Ireland</p>
+            </div>
+            {% set wow_delay = 200 %}
+
+            <div class="col-md-4 text-right">
+                {%for post in post_all_whychooseus%}
+                {%if loop.index0<4%}
+                <div class="d-flex align-items-center wcu-item wow fadeInLeft"
+                     data-wow-delay="{{wow_delay}} ms">
+                    <div class="pr-3">
+                        <p>{{post.title}}</p>
+                    </div>
+                    <div>
+                        <div class="border" style="background-color:#529c4d;">
+                            <img src="{{post.img_primary|media}}" alt="">
+                        </div>
+                    </div>
+                    {% set wow_delay = wow_delay+ 200 %}
+                </div>
+                {%endif%}
+                {%endfor%}
+            </div>
+
+            <div class="col-md-4">
+                <img src="{{'design/home/student.png'|media}}" alt="">
+            </div>
+            <div class="col-md-4 text-left">
+                {% set wow_delay = 200 %}
+                {%for post in post_all_whychooseus%}
+                {%if loop.index0>3%}
+                <div class="d-flex align-items-center wcu-item  wow fadeInRight"
+                     data-wow-delay="{{wow_delay}} ms">
+                    <div>
+                        <div class="border" style="background-color:#f58634;">
+                            <img src="{{post.img_primary|media}}" alt="">
+                        </div>
+                    </div>
+                    <div class="pl-3">
+                        <p>{{post.title}}</p>
+                    </div>
+                    {% set wow_delay = wow_delay+ 200 %}
+
+                </div>
+                {%endif%}
+                {%endfor%}
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="h_3" style="">
+    <div class="bg-top" style="background-image:url({{'design/home/testimonials_bg.jpg'|media}});">
+        <div class="cover"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between" style="margin-bottom: 35px;">
+                <h5>Our Services</h5>
+            </div>
+
+            {%for post in post_all_service%}
+            <div class="col-md-6 col-sm-6 col-12 p-2">
+                <div class="border wow fadeInUp @if($i<3)shadow-sm
+                        @endif" data-wow-delay="{{loop.index}}00ms">
+                    <div class="items"
+                         style="background-image:url({{post.img_primary|media}});">
+                    </div>
+                    <div class="p-3 info">
+                        <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                        <p>{{post.description}}</p>
+                        <div style="text-align: right">
+                            <a style="color: #f58634" href="{{post.url}}">Read more <i
+                                    class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="h_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h5>Our Student</h5>
+                <div id="All" class="tabcontent active show ">
+                    <div class="row">
+                        {%for image in category_detail_title.photos%}
+                        <div class="col-md-3 col-6 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-student"
+                               href="{{image.photo_path|media}}">
+                                <img src="{{image.photo_path|media}}" style="height: 200px" alt="">
+                            </a>
+                        </div>
+
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% partial "support" %}

@@ -1,0 +1,10 @@
+columns:
+    title:
+        label: 'Tiêu đề'
+        type: text
+    category:
+        label: 'Loại Bài Viết'
+        type: text
+        searchable: true
+        select: title
+        relation: category

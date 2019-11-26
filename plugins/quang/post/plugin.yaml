@@ -1,0 +1,16 @@
+plugin:
+    name: 'quang.post::lang.plugin.name'
+    description: 'quang.post::lang.plugin.description'
+    author: Quang
+    icon: oc-icon-book
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Post
+        url: quang/post/posts
+        icon: icon-book
+        sideMenu:
+            side-menu-item:
+                label: 'Loại Bài Viết'
+                url: quang/post/category
+                icon: icon-tag

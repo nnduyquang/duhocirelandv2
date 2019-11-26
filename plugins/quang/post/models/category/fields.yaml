@@ -1,0 +1,34 @@
+fields:
+    title:
+        label: 'Loại Bài Viết'
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: 'Mô tả (nếu cần thiết)'
+        span: full
+        size: small
+        type: textarea
+    img_primary:
+        label: 'Hình đại diện (nếu cần thiết)'
+        span: auto
+        mode: image
+        type: mediafinder
+    photos:
+        label: 'Danh sách hình Category (nếu cần thiết)'
+        prompt: 'Thềm hình'
+        span: full
+        type: repeater
+        form:
+            fields:
+                photo_path:
+                    label: 'Media finder'
+                    mode: image
+                    span: full
+                    type: mediafinder

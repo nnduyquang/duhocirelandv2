@@ -1,0 +1,4 @@
+title: Posts
+modelClass: Quang\Post\Models\Posts
+toolbar:
+    buttons: reorder_toolbar

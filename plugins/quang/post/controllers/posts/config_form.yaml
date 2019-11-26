@@ -1,0 +1,10 @@
+name: Posts
+form: $/quang/post/models/posts/fields.yaml
+modelClass: Quang\Post\Models\Posts
+defaultRedirect: quang/post/posts
+create:
+    redirect: 'quang/post/posts/update/:id'
+    redirectClose: quang/post/posts
+update:
+    redirect: quang/post/posts
+    redirectClose: quang/post/posts

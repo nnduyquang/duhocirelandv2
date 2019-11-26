@@ -1,0 +1,37 @@
+fields:
+    title:
+        label: 'Tiêu đề'
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    img_primary:
+        label: 'Hình Đại Diện'
+        mode: image
+        span: auto
+        type: mediafinder
+    description:
+        label: 'Mô tả'
+        size: small
+        span: full
+        type: textarea
+    content:
+        label: 'Nội dung'
+        size: ''
+        span: full
+        type: richeditor
+    category:
+        label: 'Loại Bài Viết'
+        span: auto
+        nameFrom: title
+        descriptionFrom: description
+        type: relation
+    is_active:
+        label: 'Kích hoạt?'
+        span: auto
+        type: switch

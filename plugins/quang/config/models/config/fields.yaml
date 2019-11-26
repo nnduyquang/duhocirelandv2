@@ -81,8 +81,12 @@ tabs:
                         label: Slider
                         mode: image
                         prompt: 'Add new item'
-                        span: auto
+                        span: full
                         type: mediafinder
+                    slider_description:
+                        label: 'Mô tả ngắn'
+                        span: full
+                        type: text
         config_script_header:
             label: 'Script Header'
             size: large
