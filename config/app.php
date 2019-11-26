@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost:8080',
+    'url' => 'http://localhost',
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +101,7 @@ return [
     |
     */
 
-    'key' => 'WDwJa6VzMqNzcfecddpqVJCygSFUWFrc',
+    'key' => 'CHANGE_ME!!!!!!!!!!!!!!!!!!!!!!!',
 
     'cipher' => 'AES-256-CBC',
 

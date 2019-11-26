@@ -1,0 +1,125 @@
+[config_logo config_logo_white]
+logoType = 1
+
+[config_description]
+
+[config_address_company]
+
+[config_email_company]
+
+[config_hotline config_hotline_show]
+hotlineType = 0
+
+[menu]
+menu_id = 1
+[post_all post_all_service]
+results = 0
+categories = "service"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+
+[category_detail_title]
+categories = "our-student"
+==
+{% set config_logo_white=config_logo_white.configLogo %}
+{% set config_description=config_description.configScriptFanPage %}
+{% set config_address_company=config_address_company.configAddressCompany %}
+{% set config_email_company=config_email_company.configEmailCompany %}
+{% set config_hotline_show=config_hotline_show.configHotline %}
+{% set post_all_service=post_all_service.posts %}
+{% set category_detail_title=category_detail_title.category_detail_title %}
+
+
+<div class="container-fluid p-0" id="footer">
+    <div class="top" style="background-image:url({{'design/home/bg-footer.jpg'|media}});">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="d-flex align-items-center">
+                        <img class="footer-logo" src="{{config_logo_white.config_logo_mobile|media}}" alt="">
+                        <p>© IrelandOs</p>
+                    </div>
+                    <p>
+                        {{config_description}}</p>
+
+                    <ul class="info">
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p><span class="span-title">Address:</span> {{config_address_company}}</p>
+                            </div>
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-globe-americas"></i>
+                                <p><span class="span-title">Email:</span> {{config_email_company}}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-phone-square"></i>
+                                <p><span class="span-title">Hotline:</span> {{config_hotline_show}}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sc-nw">
+                                <a target="_blank" href="http://www.facebook.com/irelandos"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-6 mb-3">
+
+                    <h4>Categories</h4>
+
+                    {% component 'menu' %}
+                </div>
+                <div class="col-md-4 col-sm-6 mb-3 blog">
+                    <h4>Services</h4>
+                    <ul>
+                        {%for post in post_all_service%}
+
+
+                        <li>
+                            <div class="d-flex pb-2">
+                                <div class="img-ser"
+                                     style="background-image:url({{post.img_primary|media}});">
+
+                                </div>
+                                <a href="{{post.url}}">{{post.title}}</a>
+                            </div>
+                        </li>
+
+
+                        {%endfor%}
+                    </ul>
+
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <h4>GALLERY</h4>
+                    <div class="row p-2 mt-3">
+                        {%for image in category_detail_title.photos%}
+
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{image.photo_path|media}}">
+                                <img src="{{image.photo_path|media}}" alt="">
+                            </a>
+                        </div>
+
+                        {%endfor%}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="container">
+            <p>Copyright © 2018 smartlinks.vn . All Rights Reserved</p>
+        </div>
+    </div>
+</div>
