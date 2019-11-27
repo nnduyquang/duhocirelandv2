@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2019 lúc 04:57 PM
+-- Thời gian đã tạo: Th10 27, 2019 lúc 04:18 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.2.23
 
@@ -609,6 +609,13 @@ CREATE TABLE `rainlab_translate_attributes` (
   `attribute_data` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `rainlab_translate_attributes`
+--
+
+INSERT INTO `rainlab_translate_attributes` (`id`, `locale`, `model_id`, `model_type`, `attribute_data`) VALUES
+(1, 'vi', '4', 'Quang\\Post\\Models\\Posts', '{\"title\":\"\",\"slug\":\"\"}');
+
 -- --------------------------------------------------------
 
 --
@@ -644,7 +651,8 @@ CREATE TABLE `rainlab_translate_locales` (
 --
 
 INSERT INTO `rainlab_translate_locales` (`id`, `code`, `name`, `is_default`, `is_enabled`, `sort_order`) VALUES
-(1, 'en', 'English', 1, 1, 1);
+(1, 'en', 'English', 1, 1, 1),
+(2, 'vi', 'Tiếng Việt', 0, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -657,6 +665,13 @@ CREATE TABLE `rainlab_translate_messages` (
   `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `message_data` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `rainlab_translate_messages`
+--
+
+INSERT INTO `rainlab_translate_messages` (`id`, `code`, `message_data`) VALUES
+(1, 'read.more', '{\"x\":\"Read more\",\"vi\":\"\\u0110\\u1ecdc th\\u00eam\"}');
 
 -- --------------------------------------------------------
 
@@ -1036,7 +1051,11 @@ INSERT INTO `system_plugin_history` (`id`, `code`, `type`, `version`, `detail`, 
 (184, 'Quang.Post', 'comment', '1.0.4', 'Created table quang_post_post_category', '2019-11-25 21:24:21'),
 (185, 'Quang.Page', 'comment', '1.0.1', 'Initialize plugin.', '2019-11-25 21:43:54'),
 (186, 'Quang.Page', 'script', '1.0.2', 'builder_table_create_quang_page_.php', '2019-11-25 21:45:41'),
-(187, 'Quang.Page', 'comment', '1.0.2', 'Created table quang_page_', '2019-11-25 21:45:41');
+(187, 'Quang.Page', 'comment', '1.0.2', 'Created table quang_page_', '2019-11-25 21:45:41'),
+(188, 'Vdomah.TranslateTabs', 'comment', '1.0.1', 'Initialize plugin.', '2019-11-26 20:01:58'),
+(189, 'Vdomah.TranslateTabs', 'comment', '1.0.2', 'Translatable tabs for theme options form.', '2019-11-26 20:01:58'),
+(190, 'Vdomah.TranslateTabs', 'comment', '1.0.3', 'Set translatable attribute values before model validation.', '2019-11-26 20:01:58'),
+(191, 'Vdomah.TranslateTabs', 'comment', '1.0.3', 'Handle indexed translatable attributes.', '2019-11-26 20:01:58');
 
 -- --------------------------------------------------------
 
@@ -1067,7 +1086,8 @@ INSERT INTO `system_plugin_versions` (`id`, `code`, `version`, `created_at`, `is
 (7, 'RainLab.Translate', '1.6.2', '2019-11-24 21:53:48', 0, 0),
 (8, 'Quang.Config', '1.0.2', '2019-11-24 22:18:27', 0, 0),
 (9, 'Quang.Post', '1.0.4', '2019-11-25 21:24:21', 0, 0),
-(10, 'Quang.Page', '1.0.2', '2019-11-25 21:45:41', 0, 0);
+(10, 'Quang.Page', '1.0.2', '2019-11-25 21:45:41', 0, 0),
+(11, 'Vdomah.TranslateTabs', '1.0.3', '2019-11-26 20:01:58', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1521,7 +1541,7 @@ ALTER TABLE `quang_post_category`
 -- AUTO_INCREMENT cho bảng `rainlab_translate_attributes`
 --
 ALTER TABLE `rainlab_translate_attributes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `rainlab_translate_indexes`
@@ -1533,13 +1553,13 @@ ALTER TABLE `rainlab_translate_indexes`
 -- AUTO_INCREMENT cho bảng `rainlab_translate_locales`
 --
 ALTER TABLE `rainlab_translate_locales`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `rainlab_translate_messages`
 --
 ALTER TABLE `rainlab_translate_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `system_event_logs`
@@ -1581,13 +1601,13 @@ ALTER TABLE `system_parameters`
 -- AUTO_INCREMENT cho bảng `system_plugin_history`
 --
 ALTER TABLE `system_plugin_history`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
 
 --
 -- AUTO_INCREMENT cho bảng `system_plugin_versions`
 --
 ALTER TABLE `system_plugin_versions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `system_request_logs`
