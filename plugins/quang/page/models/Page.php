@@ -14,6 +14,13 @@ class Page extends Model
      * @var string The database table used by the model.
      */
     public $table = 'quang_page_';
+    public $implement = [
+        'RainLab.Translate.Behaviors.TranslatableModel',
+        'Vdomah.TranslateTabs.Behaviors.TranslateTabbable',
+    ];
+
+
+    public $translatable = ['title','description','content'];
 
     /**
      * @var array Validation rules

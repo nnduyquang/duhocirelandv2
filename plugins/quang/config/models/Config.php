@@ -14,6 +14,13 @@ class Config extends Model
      * Remove this line if timestamps are defined in the database table.
      */
     public $timestamps = false;
+    public $implement = [
+        'RainLab.Translate.Behaviors.TranslatableModel',
+        'Vdomah.TranslateTabs.Behaviors.TranslateTabbable',
+    ];
+
+
+    public $translatable = ['config_description_company'];
 
 
     /**

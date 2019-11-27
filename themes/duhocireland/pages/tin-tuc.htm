@@ -4,5 +4,55 @@ layout = "default"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
+
+[post_all post_all_blog]
+results = 0
+categories = "blog"
+categoryPage = "chi-tiet-tin-tuc"
+postPage = "chi-tiet-tin-tuc"
 ==
-<h1>This is tin tức</h1>
+{% partial "title-page" title_page='Blogs'|_ %}
+{% set post_all_blog=post_all_blog.posts %}
+
+<div class="container-fluid" id="b_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                {%for post in post_all_blog%}
+                 
+                    <div class="col-md-6 p-2">
+                        <a href="{{post.url}}">
+                            <div class="border items">
+                                <div style="overflow: hidden">
+                                    <div class="bg-cover"
+                                         style="background-image:url({{post.img_primary|media}});height: 200px">
+
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <ul class="post-info">
+                                        <li>{{post.created_at}}</li>
+                                    </ul>
+                                </div>
+                                <div class="p-2">
+                                    <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                                    <p>{{post.description}}</p>
+                                </div>
+                                <div class="p-2 text-right mt-3 mb-3">
+                                    <a class="read-more"
+                                       href="{{post.url}}">{{'Read more'|_}}<i
+                                            class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+            <div class="col-md-4">
+                {% partial "right-bar" %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+#banner-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  h4 {
+    font-size: 38px;
+    font-weight: bold;
+    color: $main-color;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-flex;
+      a {
+        //text-transform: uppercase;
+        color: white;
+        position: relative;
+        color: $sub-color-2;
+      }
+      &:not(:last-child) {
+        a {
+          padding-right: 10px;
+          &:after {
+            position: absolute;
+            content: '/';
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.bg-cover {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

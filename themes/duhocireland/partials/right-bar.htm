@@ -1,0 +1,41 @@
+[post_all post_all_service]
+results = 0
+categories = "service"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+==
+{% set post_all_service=post_all_service.posts %}
+
+<div id="right-bar">
+    <div>
+        <h6>{{'OUR SERVICES'|_}}</h6>
+        <ul class="services">
+            {% for post in post_all_service%}
+
+            <li><a href="{{post.url}}">{{post.title}}</a></li>
+
+            {%endfor%}
+        </ul>
+
+        <div class="search-bar d-flex justify-content-between">
+            <input type="text" placeholder="Search blog here">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="mt-3">
+            <div class="sc-nw mb-3 d-flex align-items-center" style="background-color:#0367ae;">
+                <i class="fab fa-facebook-f" style="background-color:#0367ae;"></i>
+                <a target="_blank"
+                   href="https://www.facebook.com/irelandos"><span>{{'Connect with us On Facebook'|_}}</span></a>
+            </div>
+            <div class="sc-nw mb-3 d-flex align-items-center" style="background-color:#0062cc;">
+                <i class="fab fa-twitter" style="background-color:#0062cc;"></i>
+                <a href=""><span>{{'Twitter us'|_}}</span></a>
+            </div>
+            <div class="sc-nw mb-3 d-flex align-items-center" style="background-color:#d81b02;">
+                <i class="fab fa-google-plus-g" style="background-color:#d81b02;"></i>
+                <a href=""><span>{{'Connect Google+'|_}}</span></a>
+            </div>
+        </div>
+    </div>
+</div>

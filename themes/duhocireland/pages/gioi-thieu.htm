@@ -4,4 +4,36 @@ layout = "default"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
+
+[page_detail]
+pages = "welcome-irelandos"
 ==
+{% partial "title-page" title_page='About us'|_ %}
+{% set page_detail=page_detail.pageDetail %}
+<div class="container-fluid" id="au_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-lg-0 mb-2">
+                <h3>
+                    {{'WHAT IS'|_}} <span style="color: #007bff">IrelandOS</span><span style="color:null;">&nbsp;</span>
+                </h3>
+
+                <p>
+                    {{'IrelandOS is a Vietnamese registered corporation (an education referral agency) that provides educational advice to Vietnamese students who plan to study overseas.'|_}}
+                </p>
+            </div>
+
+            <div class="col-md-4 mb-lg-0 mb-2">
+                <img alt="" src="{{page_detail.img_primary|media}}" style="width: 100%;height: auto">
+            </div>
+
+            <div class="col-md-8">
+                {{page_detail.content|raw}}
+            </div>
+        </div>
+    </div>
+</div>
+{% partial "our-service" %}
+{% partial "support" %}
+{% partial "our-blog" %}
+{% partial "scub-email" %}

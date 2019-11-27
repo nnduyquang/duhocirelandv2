@@ -134,4 +134,8 @@
   'RainLab\\Translate\\Classes\\ThemeScanner' => 'plugins\\rainlab\\translate\\classes\\ThemeScanner.php',
   'vdomah\\translatetabs\\Plugin' => 'plugins\\vdomah\\translatetabs\\Plugin.php',
   'Vdomah\\TranslateTabs\\Behaviors\\TranslateTabbable' => 'plugins\\vdomah\\translatetabs\\behaviors\\TranslateTabbable.php',
+  'RainLab\\Translate\\FormWidgets\\MLRichEditor' => 'plugins\\rainlab\\translate\\formwidgets\\MLRichEditor.php',
+  'AnandPatel\\WysiwygEditors\\FormWidgets\\Editor' => 'plugins\\anandpatel\\wysiwygeditors\\formwidgets\\Editor.php',
+  'RainLab\\Builder\\Classes\\PermissionsModel' => 'plugins\\rainlab\\builder\\classes\\PermissionsModel.php',
+  'RainLab\\Builder\\Classes\\ComponentHelper' => 'plugins\\rainlab\\builder\\classes\\ComponentHelper.php',
 );

@@ -1,0 +1,57 @@
+[post_all post_all_blog]
+results = 0
+categories = "blog"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+==
+{% set post_all_blog=post_all_blog.posts %}
+<div id="h_6">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 mb-4 d-flex justify-content-between">
+                <h5>{{'Our Latest Blogs'|_}}</h5>
+            </div>
+
+
+            <div id="main-contain" class="col-md-12">
+                <div class="row mt-3">
+                    <div class="main-blog col-md-6">
+                        {%for post in post_all_blog%}
+                        {%if loop.index0==0%}
+                        <img src="{{post.img_primary|media}}" alt="">
+                        <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+                        <p>{{post.description}}</p>
+                        {%endif%}
+                        {%endfor%}
+                    </div>
+                    <div class="sub-blog col-md-6">
+                        {%for post in post_all_blog%}
+                        {%if loop.index0>0 and loop.index0<6%}
+                        <div class="mb-3 pb-3 d-flex align-items-center border-bottom">
+                            <div class="pr-2 float-left">
+                                <a href="{{post.url}}">
+                                    <div class="img-sub-blogs"
+                                         style="background-image:url({{post.img_primary|media}});">
+
+                                    </div>
+                                </a>
+                            </div>
+                            <p><a href="{{post.url}}">{{post.title}}</a>
+                            </p>
+                        </div>
+                        {%endif%}
+                        {%endfor%}
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <a href="{{url('tin-tuc')}}">
+                    <button class="view-all">{{'View all'|_}}</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

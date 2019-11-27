@@ -26,29 +26,15 @@ categories = "home_h2"
 categoryPage = "chi-tiet-dich-vu"
 postPage = "chi-tiet-dich-vu"
 
-[post_all post_all_service]
-results = 0
-categories = "service"
-categoryPage = "chi-tiet-dich-vu"
-postPage = "chi-tiet-dich-vu"
-
 [category_detail_title]
 categories = "our-student"
-
-[post_all post_all_blog]
-results = 0
-categories = "blog"
-categoryPage = "chi-tiet-tin-tuc"
-postPage = "chi-tiet-tin-tuc"
 ==
 {% partial "slider" %}
 {% set post_all_h1=post_all_h1.posts %}
 {% set page_detail=page_detail.pageDetail %}
 {% set post_all_information=post_all_information.posts %}
 {% set post_all_whychooseus=post_all_whychooseus.posts %}
-{% set post_all_service=post_all_service.posts %}
 {% set category_detail_title=category_detail_title.category_detail_title %}
-{% set post_all_blog=post_all_blog.posts %}
 
 <div class="container-fluid" id="h_1">
     <div class="container" id="top">
@@ -91,34 +77,34 @@ postPage = "chi-tiet-tin-tuc"
                     <div class="bg-img"
                          style="background-image:url({{'design/home/du-hoc-ireland-co-hoi-hoc-bong-hap-dan-danh-rieng-cho-sinh-vien-viet-nam.jpg'|media}});"></div>
                     <div class="content">
-                        <h4>Get A Free Registration</h4>
+                        <h4>{{'Get A Free Registration'|_}}</h4>
                         <div class="ip-name input-group" style="display: block">
-                            <input name="name" type="text" placeholder="Your name"
+                            <input name="name" type="text" placeholder="{{'Your name'|_}}"
                                    class="form-control input-text" style="display: inline-block;border-radius: unset">
                             <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
-                                Please choose a username.
+                                {{'Please enter your name.'|_}}
                             </div>
                         </div>
                         <div class="ip-phone input-group" style="display: block">
-                            <input name="phone" type="text" placeholder="Your phone"
+                            <input name="phone" type="text" placeholder="{{'Your phone'|_}}"
                                    class="form-control input-text" style="display: inline-block;border-radius: unset">
                             <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
-                                Please choose a username.
+                                {{'Please enter your phone.'|_}}
                             </div>
                         </div>
                         <div class="ip-email input-group" style="display: block">
-                            <input name="email" type="text" placeholder="Your email"
+                            <input name="email" type="text" placeholder="{{'Your email'|_}}"
                                    class="form-control input-text" style="display: inline-block;border-radius: unset">
                             <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
-                                Please choose a username.
+                                {{'Please enter your email.'|_}}
                             </div>
                         </div>
                         <textarea name="description" rows="4" cols="50"
-                                  placeholder="Message"></textarea>
+                                  placeholder="{{'Message'|_}}"></textarea>
                         <div class="btn-submit">
                             <div class="button-group">
                                 <button type="button"
-                                        class="btn btn-contact submit-re">Send<i
+                                        class="btn btn-contact submit-re">{{'Send'|_}}<i
                                         class="fa fa-spinner fa-spin fa-3x fa-fw loadingSending" style="
     font-size: 15px;display: none"></i><i
                                         class="fa fa-check-circle successSending" aria-hidden="true"
@@ -137,8 +123,8 @@ postPage = "chi-tiet-tin-tuc"
     <div class="container">
         <div class="row">
             <div class="col-12 mb-3">
-                <h5>Why Choose Us</h5>
-                <p class="info">Here are the reasons why your students should choose Ireland</p>
+                <h5>{{'Why Choose Us'|_}}</h5>
+                <p class="info">{{'Here are the reasons why your students should choose Ireland'|_}}</p>
             </div>
             {% set wow_delay = 200 %}
 
@@ -188,43 +174,12 @@ postPage = "chi-tiet-tin-tuc"
         </div>
     </div>
 </div>
-<div class="container-fluid" id="h_3" style="">
-    <div class="bg-top" style="background-image:url({{'design/home/testimonials_bg.jpg'|media}});">
-        <div class="cover"></div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-between" style="margin-bottom: 35px;">
-                <h5>Our Services</h5>
-            </div>
-
-            {%for post in post_all_service%}
-            <div class="col-md-6 col-sm-6 col-12 p-2">
-                <div class="border wow fadeInUp @if($i<3)shadow-sm
-                        @endif" data-wow-delay="{{loop.index}}00ms">
-                    <div class="items"
-                         style="background-image:url({{post.img_primary|media}});">
-                    </div>
-                    <div class="p-3 info">
-                        <h4><a href="{{post.url}}">{{post.title}}</a></h4>
-                        <p>{{post.description}}</p>
-                        <div style="text-align: right">
-                            <a style="color: #f58634" href="{{post.url}}">Read more <i
-                                    class="fas fa-long-arrow-alt-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {%endfor%}
-        </div>
-    </div>
-</div>
+{% partial "our-service" %}
 <div class="container-fluid" id="h_4">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h5>Our Student</h5>
+                <h5>{{'Our Student'|_}}</h5>
                 <div id="All" class="tabcontent active show ">
                     <div class="row">
                         {%for image in category_detail_title.photos%}
@@ -244,54 +199,5 @@ postPage = "chi-tiet-tin-tuc"
     </div>
 </div>
 {% partial "support" %}
-<div id="h_6">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mt-5 mb-4 d-flex justify-content-between">
-                <h5>Our Latest Blogs</h5>
-            </div>
-
-
-            <div id="main-contain" class="col-md-12">
-                <div class="row mt-3">
-                    <div class="main-blog col-md-6">
-                        {%for post in post_all_blog%}
-                        {%if loop.index0==0%}
-                        <img src="{{post.img_primary|media}}" alt="">
-                        <h3><a href="{{post.url}}">{{post.title}}</a></h3>
-                        <p>{{post.description}}</p>
-                        {%endif%}
-                        {%endfor%}
-                    </div>
-                    <div class="sub-blog col-md-6">
-                        {%for post in post_all_blog%}
-                        {%if loop.index0>0 and loop.index0<6%}
-                        <div class="mb-3 pb-3 d-flex align-items-center border-bottom">
-                            <div class="pr-2 float-left">
-                                <a href="{{post.url}}">
-                                    <div class="img-sub-blogs"
-                                         style="background-image:url({{post.img_primary|media}});">
-
-                                    </div>
-                                </a>
-                            </div>
-                            <p><a href="{{post.url}}">{{post.title}}</a>
-                            </p>
-                        </div>
-                        {%endif%}
-                        {%endfor%}
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="col-12 text-center">
-                <a href="{{url('tin-tuc')}}">
-                    <button class="view-all">View all</button>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</div>
+{% partial "our-blog" %}
 {% partial "scub-email" %}

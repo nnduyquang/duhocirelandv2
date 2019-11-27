@@ -5,57 +5,60 @@ forceUrl = 0
 ==
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
-        <meta name="author" content="OctoberCMS">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="generator" content="OctoberCMS">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/20005df3fc.js" crossorigin="anonymous"></script>
-        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
-        <link href="{{ 'assets/css/reset.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/css/common.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/css/frontend.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/css/core.common.css'|theme }}" rel="stylesheet">
-        {% styles %}
-    </head>
-    <body>
-    <div style="display:none">{% component 'localePicker' %}</div>
+<head>
+    <meta charset="utf-8">
+    <title>October CMS - {{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="OctoberCMS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20005df3fc.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/css/reset.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/common.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/frontend.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/core.common.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+<body>
+<div style="display:none">{% component 'localePicker' %}</div>
 
-        <!-- Header -->
-        <header id="layout-header">
+<!-- Header -->
+<header id="layout-header">
 
-        </header>
+</header>
 
-        <!-- Content -->
-        <section id="layout-content">
-        {% partial "header-top" %}
-            {% page %}
-        </section>
 
-        <!-- Footer -->
-        {% partial "footer" %}
+<!-- Content -->
+<section id="layout-content">
+    {% partial "header-top" %}
+    {% page %}
+</section>
+{% partial "box-contact" %}
 
-        <!-- Scripts -->
-        <script
-                src="https://code.jquery.com/jquery-3.4.1.js"
-                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-                crossorigin="anonymous"></script>
-        <script src="{{ 'assets/js/core.common.js'|theme }}"></script>
-        <script type="text/javascript">
-            new WOW().init();
-            $(".fancybox").fancybox();
-        </script>
-        {% framework extras %}
-        {% scripts %}
 
-    </body>
+<!-- Footer -->
+{% partial "footer" %}
+
+<!-- Scripts -->
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="{{ 'assets/js/core.common.js'|theme }}"></script>
+<script type="text/javascript">
+    new WOW().init();
+    $(".fancybox").fancybox();
+</script>
+{% framework extras %}
+{% scripts %}
+
+</body>
 </html>

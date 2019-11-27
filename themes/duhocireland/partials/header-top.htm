@@ -14,6 +14,9 @@ menu_id = 1
 
 [localePicker]
 forceUrl = 0
+
+[menu menu_en]
+menu_id = 2
 ==
 {% set config_hotline_show=config_hotline_show.configHotline %}
 {% set config_hotline_call=config_hotline_call.configHotline %}
@@ -61,7 +64,11 @@ forceUrl = 0
     </div>
     <div class="main-menu-desktop">
         <div class="container text-center d-lg-block d-md-block d-none">
+            {%if activeLocale =='vi' %}
             {% component 'menu' %}
+            {%else%}
+            {% component 'menu_en' %}
+            {%endif%}
 
         </div>
         <div class="container mobile-menu d-lg-none d-md-none d-flex justify-content-between align-items-center">

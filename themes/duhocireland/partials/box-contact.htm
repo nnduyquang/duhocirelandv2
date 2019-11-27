@@ -1,0 +1,25 @@
+[config_email_company]
+
+[config_hotline config_hotline_show]
+hotlineType = 0
+==
+{% set config_email_company=config_email_company.configEmailCompany %}
+{% set config_hotline_show=config_hotline_show.configHotline %}
+<div class="box-contact">
+    <div class="box-style">
+        <a target="_blank" href="http://www.facebook.com/irelandos"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <div class="box-style">
+        <a href="{{url('lien-he')}}"><i class="fas fa-map-marked-alt"></i></a>
+    </div>
+    <div class="box-style">
+        <a href="#"><i class="fas fa-phone"></i></a>
+        <div class="phone-number">
+            {{config_hotline_show}}
+        </div>
+    </div>
+    <div class="box-style">
+        <a href="mailto:{{config_email_company}}""><i class="fas fa-envelope"></i></a>
+    </div>
+
+</div>

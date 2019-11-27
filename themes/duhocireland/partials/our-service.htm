@@ -1,0 +1,39 @@
+[post_all post_all_service]
+results = 0
+categories = "service"
+categoryPage = "chi-tiet-dich-vu"
+postPage = "chi-tiet-dich-vu"
+==
+{% set post_all_service=post_all_service.posts %}
+<div class="container-fluid" id="h_3" style="">
+    <div class="bg-top" style="background-image:url({{'design/home/testimonials_bg.jpg'|media}});">
+        <div class="cover"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between" style="margin-bottom: 35px;">
+                <h5>{{'Our Services'|_}}</h5>
+            </div>
+
+            {%for post in post_all_service%}
+            <div class="col-md-6 col-sm-6 col-12 p-2">
+                <div class="border wow fadeInUp @if($i<3)shadow-sm
+                        @endif" data-wow-delay="{{loop.index}}00ms">
+                    <div class="items"
+                         style="background-image:url({{post.img_primary|media}});">
+                    </div>
+                    <div class="p-3 info">
+                        <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                        <p>{{post.description}}</p>
+                        <div style="text-align: right">
+                            <a style="color: #f58634" href="{{post.url}}">{{'Read more'|_}}<i
+                                    class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {%endfor%}
+        </div>
+    </div>
+</div>

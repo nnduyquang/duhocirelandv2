@@ -4,4 +4,110 @@ layout = "default"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
+
+[config_email_company]
+
+[config_address_company]
+
+[config_hotline config_hotline_show]
+hotlineType = 0
 ==
+{% set config_email_company=config_email_company.configEmailCompany %}
+{% set config_address_company=config_address_company.configAddressCompany %}
+{% set config_hotline_show=config_hotline_show.configHotline %}
+{% partial "title-page" title_page='Contact'|_ %}
+<div class="container-fluid" id="c_1">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-3 text-center mb-lg-0 mb-2">
+                <div class="info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>{{config_address_company}}</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center mb-lg-0 mb-2">
+                <div class="info">
+                    <i class="fas fa-headphones-alt"></i>
+                    <p>{{config_hotline_show}}</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center mb-lg-0 mb-2">
+                <div class="info">
+                    <i class="far fa-envelope"></i>
+                    <p>{{config_email_company}}</p>
+                    <p>michael@irelandos.com</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center mb-lg-0 mb-2">
+                <div class="info">
+                    <div>
+                        <a target="_blank" href="http://www.facebook.com/irelandos"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <p>Social Network</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mb-lg-0 mb-2">
+                <h3>{{'QUICK CONTACT TO US'|_}}</h3>
+                <p>{{'You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.'|_}}</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="ip-name input-group">
+                            <input class="form-control input-text" name="name" type="text"
+                                   placeholder="{{'Your name here'|_}}">
+                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
+                                Please choose a username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ip-email input-group">
+                            <input class="form-control input-text" name="email" type="text"
+                                   placeholder="{{'Your email here'|_}}">
+                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
+                                Please choose a username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ip-phone input-group">
+                            <input class="form-control input-text" type="text" name="phone"
+                                   placeholder="{{'Your phone number here'|_}}">
+                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
+                                Please choose a username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="title" placeholder="{{'Title here'|_}}">
+                    </div>
+                    <div class="col-md-12">
+                        <textarea name="description" id="" cols="30" rows="10"
+                                  placeholder="{{'Message'|_}}"></textarea>
+                    </div>
+                    <div class="col-md-12 text-left btn-submit">
+                        <div class="button-group">
+                            <button type="button" class="btn btn-contact submit-re">{{'Send Info'|_}}<i
+                                    class="fab fa-telegram-plane pl-1"></i><i
+                                    class="fa fa-spinner fa-spin fa-3x fa-fw loadingSending" style="
+    font-size: 15px;display: none"></i><i
+                                    class="fa fa-check-circle successSending" aria-hidden="true"
+                                    style="display: none"></i></button>
+                            <span style="display: none;color:  green;font-weight:  bold;margin-top:  5px;">Chúng tôi đã nhận được mail và sẽ phản hồi quý khách trong 24h. Xin cảm ơn.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-lg-0 mb-2">
+                <h3>{{'Map'|_}}</h3>
+                <div class="mt-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.108945568562!2d106.66122695066046!3d10.80296726161878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175293abb8f578f%3A0xbae110f45f601d3c!2zMzkgVHLGsOG7nW5nIFPGoW4sIFBoxrDhu51uZyA0LCBUw6JuIELDrG5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1547453305918"
+                            width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <p>{{'Address'|_}} : {{config_address_company}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

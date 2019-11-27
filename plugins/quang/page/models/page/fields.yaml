@@ -17,12 +17,12 @@ fields:
         type: textarea
     content:
         label: 'Nội dung'
-        size: ''
+        size: large
         span: full
         type: richeditor
     img_primary:
         label: 'Hình đại diện (nếu cần thiết)'
-        mode: file
+        mode: image
         span: auto
         type: mediafinder
     is_active:

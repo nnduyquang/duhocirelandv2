@@ -26,7 +26,7 @@ class Posts extends Model
     ];
 
 
-    public $translatable = ['title','slug'];
+    public $translatable = ['title','description'];
 
     /* Relations */
     public $belongsToMany = [
