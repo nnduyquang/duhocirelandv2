@@ -1,4 +1,7 @@
 description = "Default layout"
+
+[localePicker]
+forceUrl = 0
 ==
 <!DOCTYPE html>
 <html>
@@ -22,6 +25,7 @@ description = "Default layout"
         {% styles %}
     </head>
     <body>
+    <div style="display:none">{% component 'localePicker' %}</div>
 
         <!-- Header -->
         <header id="layout-header">

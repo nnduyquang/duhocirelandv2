@@ -20,6 +20,13 @@ class Posts extends Model
      */
     public $rules = [
     ];
+    public $implement = [
+        'RainLab.Translate.Behaviors.TranslatableModel',
+        'Vdomah.TranslateTabs.Behaviors.TranslateTabbable',
+    ];
+
+
+    public $translatable = ['title','slug'];
 
     /* Relations */
     public $belongsToMany = [

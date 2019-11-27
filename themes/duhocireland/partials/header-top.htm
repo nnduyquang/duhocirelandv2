@@ -11,6 +11,9 @@ logoType = 0
 
 [menu]
 menu_id = 1
+
+[localePicker]
+forceUrl = 0
 ==
 {% set config_hotline_show=config_hotline_show.configHotline %}
 {% set config_hotline_call=config_hotline_call.configHotline %}
@@ -34,7 +37,12 @@ menu_id = 1
             </div>
             <div class="sc-nw">
                 <a target="_blank" href="http://www.facebook.com/irelandos"><i class="fab fa-facebook-f"></i></a>
-
+                <a href="" data-request="onSwitchLocale" data-request-data="locale: 'en'"><img
+                        src="{{'design/ie.png'|media}}" alt=""
+                        style="width: 22px;height: auto;margin: auto"></a>
+                <a href="" data-request="onSwitchLocale" data-request-data="locale: 'vi'"><img
+                        src="{{'design/vietnam-flag.png'|media}}" alt=""
+                        style="width: 22px;height: auto;margin: auto"></a>
             </div>
         </div>
     </div>

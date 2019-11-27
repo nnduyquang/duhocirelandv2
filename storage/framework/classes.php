@@ -127,4 +127,11 @@
   'backend\\Controllers\\media' => 'modules\\backend\\controllers\\media.php',
   'Quang\\Post\\Components\\Category_Detail_URL' => 'plugins\\quang\\post\\components\\Category_Detail_URL.php',
   'Quang\\Post\\Components\\Category_Detail_Title' => 'plugins\\quang\\post\\components\\Category_Detail_Title.php',
+  'rainlab\\translate\\Controllers\\locales' => 'plugins\\rainlab\\translate\\controllers\\locales.php',
+  'rainlab\\translate\\Controllers\\messages' => 'plugins\\rainlab\\translate\\controllers\\messages.php',
+  'RainLab\\Translate\\Models\\MessageImport' => 'plugins\\rainlab\\translate\\models\\MessageImport.php',
+  'RainLab\\Translate\\Models\\MessageExport' => 'plugins\\rainlab\\translate\\models\\MessageExport.php',
+  'RainLab\\Translate\\Classes\\ThemeScanner' => 'plugins\\rainlab\\translate\\classes\\ThemeScanner.php',
+  'vdomah\\translatetabs\\Plugin' => 'plugins\\vdomah\\translatetabs\\Plugin.php',
+  'Vdomah\\TranslateTabs\\Behaviors\\TranslateTabbable' => 'plugins\\vdomah\\translatetabs\\behaviors\\TranslateTabbable.php',
 );
