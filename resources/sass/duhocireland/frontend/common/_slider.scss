@@ -18,7 +18,7 @@
     background: #D31027;
     background: -webkit-linear-gradient(to right, $main-color,$main-color-sub);
     background: linear-gradient(to right,$main-color,$main-color-sub);
-    animation: shake 1s ease-in infinite;
+    //animation: shake 1s ease-in infinite;
   }
   @keyframes shake {
     0%{

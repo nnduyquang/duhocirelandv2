@@ -21,6 +21,9 @@ categories = "our-student"
 
 [config_logo config_logo_footer]
 logoType = 1
+
+[menu menu_en]
+menu_id = 2
 ==
 {% set config_description=config_description.configDescriptionCompany %}
 {% set config_address_company=config_address_company.configAddressCompany %}
@@ -73,7 +76,11 @@ logoType = 1
 
                     <h4>{{'Categories'|_}}</h4>
 
-                    {% component 'menu' %}
+                    {%if activeLocale =='vi' %}
+            {% component 'menu' %}
+            {%else%}
+            {% component 'menu_en' %}
+            {%endif%}
                 </div>
                 <div class="col-md-4 col-sm-6 mb-3 blog">
                     <h4>{{'Services'|_}}</h4>

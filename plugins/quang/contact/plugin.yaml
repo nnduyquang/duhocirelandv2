@@ -1,0 +1,6 @@
+plugin:
+    name: 'quang.contact::lang.plugin.name'
+    description: 'quang.contact::lang.plugin.description'
+    author: Quang
+    icon: oc-icon-adjust
+    homepage: ''

@@ -25,3 +25,4 @@ mix.sass('resources/sass/duhocireland/frontend/common/common.scss', '../themes/d
         path_node_modules + 'fancybox/dist/css/jquery.fancybox.css',
 
     ], 'themes/duhocireland/assets/css/core.common.css')
+    .styles('resources/js/frontend/common.js', 'themes/duhocireland/assets/js/common.js')

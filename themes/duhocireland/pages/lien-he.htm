@@ -11,6 +11,8 @@ robot_follow = "follow"
 
 [config_hotline config_hotline_show]
 hotlineType = 0
+
+[contact_form]
 ==
 {% set config_email_company=config_email_company.configEmailCompany %}
 {% set config_address_company=config_address_company.configAddressCompany %}
@@ -50,55 +52,7 @@ hotlineType = 0
         </div>
         <div class="row">
             <div class="col-md-8 mb-lg-0 mb-2">
-                <h3>{{'QUICK CONTACT TO US'|_}}</h3>
-                <p>{{'You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.'|_}}</p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="ip-name input-group">
-                            <input class="form-control input-text" name="name" type="text"
-                                   placeholder="{{'Your name here'|_}}">
-                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
-                                Please choose a username.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="ip-email input-group">
-                            <input class="form-control input-text" name="email" type="text"
-                                   placeholder="{{'Your email here'|_}}">
-                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
-                                Please choose a username.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="ip-phone input-group">
-                            <input class="form-control input-text" type="text" name="phone"
-                                   placeholder="{{'Your phone number here'|_}}">
-                            <div class="invalid-feedback" style="font-size: 15px;font-weight:  bold;">
-                                Please choose a username.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="title" placeholder="{{'Title here'|_}}">
-                    </div>
-                    <div class="col-md-12">
-                        <textarea name="description" id="" cols="30" rows="10"
-                                  placeholder="{{'Message'|_}}"></textarea>
-                    </div>
-                    <div class="col-md-12 text-left btn-submit">
-                        <div class="button-group">
-                            <button type="button" class="btn btn-contact submit-re">{{'Send Info'|_}}<i
-                                    class="fab fa-telegram-plane pl-1"></i><i
-                                    class="fa fa-spinner fa-spin fa-3x fa-fw loadingSending" style="
-    font-size: 15px;display: none"></i><i
-                                    class="fa fa-check-circle successSending" aria-hidden="true"
-                                    style="display: none"></i></button>
-                            <span style="display: none;color:  green;font-weight:  bold;margin-top:  5px;">Chúng tôi đã nhận được mail và sẽ phản hồi quý khách trong 24h. Xin cảm ơn.</span>
-                        </div>
-                    </div>
-                </div>
+{% component 'contact_form' %}
             </div>
             <div class="col-md-4 mb-lg-0 mb-2">
                 <h3>{{'Map'|_}}</h3>

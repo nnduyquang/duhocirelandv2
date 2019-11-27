@@ -1,0 +1,16 @@
+[menu menu_en]
+menu_id = 2
+
+[menu menu_vi]
+menu_id = 1
+==
+<div class="container-fluid p-0" id="menu-mobile">
+    <div style="width: 100%;background-color:#fff;">
+        {%if activeLocale =='vi' %}
+        {% component 'menu_vi' %}
+        {%else%}
+        {% component 'menu_en' %}
+        {%endif%}
+
+    </div>
+</div>

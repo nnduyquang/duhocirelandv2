@@ -1,0 +1,10 @@
+
+
+<script type="text/javascript">
+    $('.error-msg').remove();
+    var errors={{fieldMsgs|json_encode()|raw}}
+
+    $.each(errors,function(name,obj){
+        $('<div class="error-msg">'+obj+'</div>').insertAfter($('input[name='+name+']'));
+    })
+</script>
