@@ -1,0 +1,14 @@
+[config_hotline config_hotline_call]
+hotlineType = 1
+==
+{% set config_hotline_call=config_hotline_call.configHotline %}
+
+
+<div class="callback d-lg-none d-md-none">
+    <div class="phone_animation">
+        <div class="phone_animation_circle"></div>
+        <div class="phone_animation_circle_fill"></div>
+        <a href="tel:{{config_hotline_call}}" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
+                                                                             aria-hidden="true"></i></a>
+    </div>
+</div>
